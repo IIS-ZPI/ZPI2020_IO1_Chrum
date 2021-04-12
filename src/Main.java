@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Nazwa grupy: Chrum, ID leadera: Tomek008, rola: developer");
+        System.out.println("Filip Amro - Github ID: wiezawieza10");
     }
 }
