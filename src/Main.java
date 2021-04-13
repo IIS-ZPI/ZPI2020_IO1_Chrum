@@ -1,7 +1,7 @@
-
-public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv{
+public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv, IArithmeticsDiff {
 
     public static void main(String[] args) {
+
         System.out.println("Nazwa grupy: Chrum, ID leadera: Tomek008, rola: developer");
         System.out.println("Filip Amro - Github ID: wiezawieza10");
         System.out.println("Tomasz Nykiel - Github ID: Tomek008");
@@ -10,12 +10,16 @@ public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv{
     }
 
     @Override
+    public double Difference(double A, double B) {
+        return A - B;
+    }
+
+    @Override
     public double Division(double A, double B) {
         double threshold = 0.000001;
-        if( B >= -threshold && B <= threshold ){
-            return A/B;
-        }
-        else {
+        if (B >= -threshold && B <= threshold) {
+            return A / B;
+        } else {
             try {
                 throw new Exception("Cannot divide by 0!");
             } catch (Exception e) {
@@ -23,14 +27,15 @@ public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv{
             }
             return 0;
         }
-    
-    @Override
-    public double Addition(double A, double B) {
-          return A+B;
     }
-    
+
     @Override
-    public double Multiplication(double A, double B) {
-          return A * B;
+    public double Multiplication ( double A, double B){
+        return A * B;
+    }
+
+    @Override
+    public double Addition ( double A, double B){
+        return A + B;
     }
 }
