@@ -1,4 +1,5 @@
-public class Main implements IArithmeticsAdd{
+public class Main implements IArithmeticsMult, IArithmeticsAdd{
+
     public static void main(String[] args) {
         System.out.println("Nazwa grupy: Chrum, ID leadera: Tomek008, rola: developer");
         System.out.println("Filip Amro - Github ID: wiezawieza10");
@@ -10,5 +11,10 @@ public class Main implements IArithmeticsAdd{
     @Override
     public double Addition(double A, double B) {
         return A+B;
+    }
+    
+    @Override
+    public double Multiplication(double A, double B) {
+        return A * B;
     }
 }
