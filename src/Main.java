@@ -1,4 +1,6 @@
-public class Main implements IArithmeticsDiv{
+
+public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv{
+
     public static void main(String[] args) {
         System.out.println("Nazwa grupy: Chrum, ID leadera: Tomek008, rola: developer");
         System.out.println("Filip Amro - Github ID: wiezawieza10");
@@ -9,7 +11,6 @@ public class Main implements IArithmeticsDiv{
 
     @Override
     public double Division(double A, double B) {
-
         double threshold = 0.000001;
         if( B >= -threshold && B <= threshold ){
             return A/B;
@@ -22,5 +23,14 @@ public class Main implements IArithmeticsDiv{
             }
             return 0;
         }
+    
+    @Override
+    public double Addition(double A, double B) {
+          return A+B;
+    }
+    
+    @Override
+    public double Multiplication(double A, double B) {
+          return A * B;
     }
 }
