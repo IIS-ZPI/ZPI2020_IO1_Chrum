@@ -38,8 +38,4 @@ public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv,
     public double Addition ( double A, double B){
         return A + B;
     }
-
-    public static void task6(){
-        System.out.println("To jest moje zadanie 6");
-    }
 }
