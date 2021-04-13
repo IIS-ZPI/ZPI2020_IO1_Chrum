@@ -7,6 +7,7 @@ public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv,
         System.out.println("Tomasz Nykiel - Github ID: Tomek008");
         System.out.println("Patryk Gajda - Github ID: ImAStudentAtUniversity");
         System.out.println("Jakub Kaniewski - Github ID: Blemm13 ");// TODO: 13.04.2021 New comment from task 6
+
     }
 
     @Override
@@ -37,9 +38,5 @@ public class Main implements IArithmeticsMult, IArithmeticsAdd, IArithmeticsDiv,
     @Override
     public double Addition ( double A, double B){
         return A + B;
-    }
-
-    public static void task6(){
-        System.out.println("To jest moje zadanie 6");
     }
 }
