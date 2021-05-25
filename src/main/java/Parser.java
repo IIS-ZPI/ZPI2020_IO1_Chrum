@@ -28,7 +28,7 @@ public class Parser {
 
         double[] result = new double[resultSize];
         int idx = 0;
-        for(int i = 0; i < resultSize; i++){
+        for(int i = 0; i < weekDays; i++){
             if(temp[i] != 0){
                 result[idx] = temp[i];
                 idx++;
