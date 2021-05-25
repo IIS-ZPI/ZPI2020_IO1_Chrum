@@ -1,3 +1,5 @@
+package main.java;
+
 import java.net.HttpURLConnection;
 import java.util.Scanner;
 
