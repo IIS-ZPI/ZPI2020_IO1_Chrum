@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 public class NBPDataLoader {
 
     private final String BaseURL = "http://api.nbp.pl/api/";
+    private static final String CurrencyURL = "http://api.nbp.pl/api/exchangerates/rates/a/";
 
     public static HttpURLConnection connect(String UrlString){
 
@@ -30,6 +31,25 @@ public class NBPDataLoader {
         return connection;
     }
 
+    public static HttpURLConnection connect(String currencyCode, String date){
+
+        HttpURLConnection connection = null;
+        URL url;
+
+        try {
+            url = new URL(CurrencyURL + currencyCode + '/' + date + '/');
+            connection = (HttpURLConnection) url.openConnection();
+        }
+        catch (MalformedURLException e){
+            System.out.println("Url error!");
+        }
+        catch (IOException e){
+            System.out.println("Connection error!");
+        }
+
+        return connection;
+    }
+
     public static String read(HttpURLConnection connection){
         String result = null;
         try {
@@ -37,7 +57,7 @@ public class NBPDataLoader {
             result = br.readLine();
         }
         catch (IOException e){
-            System.out.println("Input/Output error!");
+            return null;
         }
 
         return result;

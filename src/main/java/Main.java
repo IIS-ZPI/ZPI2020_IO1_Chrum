@@ -8,6 +8,7 @@ public class Main {
         String currencyCode = "";
         String secondCurrencyCode = "";
         Scanner input = new Scanner(System.in);
+        double [] currencyValue;
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -17,6 +18,7 @@ public class Main {
             System.out.println("4 - zakoncz dzialanie aplikacji");
 
             userChoose = input.nextInt();
+            input.nextLine();
 
             if(userChoose == 4 || userChoose == 0){
                 break;
@@ -25,6 +27,7 @@ public class Main {
             if(userChoose == 1){
                 System.out.println("Podaj kod waluty:");
                 currencyCode = input.nextLine();
+                currencyValue = Parser.getCurrencyWeek(currencyCode);
             }else if(userChoose == 2){
                 System.out.println("Podaj kod waluty:");
                 currencyCode = input.nextLine();
