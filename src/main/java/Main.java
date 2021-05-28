@@ -27,7 +27,7 @@ public class Main {
             if(userChoose == 1){
                 System.out.println("Podaj kod waluty:");
                 currencyCode = input.nextLine();
-                currencyValue = Parser.getCurrencyWeek(currencyCode);
+                currencyValue = Parser.getCurrency(currencyCode,"week");
             }else if(userChoose == 2){
                 System.out.println("Podaj kod waluty:");
                 currencyCode = input.nextLine();

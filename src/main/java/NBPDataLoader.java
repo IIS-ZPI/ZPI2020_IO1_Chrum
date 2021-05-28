@@ -31,6 +31,12 @@ public class NBPDataLoader {
         return connection;
     }
 
+    /**
+     *
+     * @param currencyCode kod waluty
+     * @param date data, dla której będziemy pobierać kurs waluty
+     * @return uchwyt do połączenia z bazą, zktórej można pobrać dane
+     */
     public static HttpURLConnection connect(String currencyCode, String date){
 
         HttpURLConnection connection = null;
@@ -50,6 +56,11 @@ public class NBPDataLoader {
         return connection;
     }
 
+    /**
+     *
+     * @param connection uchwyt połączenia z bazą danych
+     * @return  dane pobrane z bazy (jako string)
+     */
     public static String read(HttpURLConnection connection){
         String result = null;
         try {
