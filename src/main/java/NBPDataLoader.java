@@ -12,8 +12,10 @@ public class NBPDataLoader {
     private final String BaseURL = "http://api.nbp.pl/api/";
     private static final String CurrencyURL = "http://api.nbp.pl/api/exchangerates/rates/a/";
 
-    public static HttpURLConnection connect(String UrlString){
-
+    public static HttpURLConnection connect(String UrlString) throws NullPointerException{
+        if (UrlString == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         HttpURLConnection connection = null;
         URL url;
 
@@ -37,8 +39,10 @@ public class NBPDataLoader {
      * @param date data, dla której będziemy pobierać kurs waluty
      * @return uchwyt do połączenia z bazą, zktórej można pobrać dane
      */
-    public static HttpURLConnection connect(String currencyCode, String date){
-
+    public static HttpURLConnection connect(String currencyCode, String date) throws NullPointerException{
+        if (currencyCode == null || date == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         HttpURLConnection connection = null;
         URL url;
 
@@ -61,7 +65,10 @@ public class NBPDataLoader {
      * @param connection uchwyt połączenia z bazą danych
      * @return  dane pobrane z bazy (jako string)
      */
-    public static String read(HttpURLConnection connection){
+    public static String read(HttpURLConnection connection) throws NullPointerException{
+        if (connection == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         String result = null;
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));

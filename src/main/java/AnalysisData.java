@@ -1,12 +1,18 @@
 import java.util.Arrays;
 
 /**
- * AnalysisData - klosa zawiera metody pozwalajac wyznaczyć określone wartości np mediana, dominanta, liczba sesji wzrostowych itd.
+ *
+ * AnalysisData - Klasa zawierająca metody pozwalajace wyznaczyć określone wartości np mediana, dominanta, liczba sesji
+ * wzrostowych itd.
+ *
  */
+
 public class AnalysisData {
 
-    public static double getMedian(double [] data){
-
+    public static double getMedian(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         double median;
         double avg;
         Arrays.sort(data);
@@ -21,14 +27,17 @@ public class AnalysisData {
         return median;
     }
 
-    public static double getDominant(double [] data){
+    public static double getDominant(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         int dominantIdx = 0;
         int counter1 = 0;
         int counter2;
         for(int i = 0; i < data.length; i++){
             counter2 = 0;
-            for (int x = 0; x < data.length; x++){
-                if( data[i] == data[x]){
+            for (double x : data) {
+                if (data[i] == x) {
                     counter2++;
                 }
             }
@@ -41,8 +50,10 @@ public class AnalysisData {
         return data[dominantIdx];
     }
 
-    public static double getStandardDeviation(double [] data){
-
+    public static double getStandardDeviation(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         double sum = 0.0;
         double standardDeviation = 0.0;
         int length = data.length;
@@ -61,7 +72,10 @@ public class AnalysisData {
 
     }
 
-    public static double coefficientOfVariation(double [] data){
+    public static double coefficientOfVariation(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         double avg = 0;
         for(double d:data){
             avg += d;
@@ -71,7 +85,10 @@ public class AnalysisData {
         return getStandardDeviation(data)/avg;
     }
 
-    public static int upSession(double [] data){
+    public static int upSession(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         int upSessionCounter = 0;
         int counter = 1;
         for(int i = 1; i < data.length; i++){
@@ -88,7 +105,10 @@ public class AnalysisData {
         return upSessionCounter;
     }
 
-    public static int downSession(double [] data){
+    public static int downSession(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         int upSessionCounter = 0;
         int counter = 1;
         for(int i = 1; i < data.length; i++){
@@ -105,7 +125,10 @@ public class AnalysisData {
         return upSessionCounter;
     }
 
-    public static int stableSession(double [] data){
+    public static int stableSession(double[] data) throws NullPointerException{
+        if (data == null){
+            throw new NullPointerException("Parameter is of null value.");
+        }
         int upSessionCounter = 0;
         int counter = 1;
         for(int i = 1; i < data.length; i++){
