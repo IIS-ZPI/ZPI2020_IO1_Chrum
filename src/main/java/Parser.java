@@ -1,5 +1,3 @@
-import sun.jvm.hotspot.types.WrongTypeException;
-
 import java.net.HttpURLConnection;
 import java.time.LocalDate;
 import java.util.NoSuchElementException;
@@ -52,7 +50,7 @@ public class Parser {
 
         double [] temp = new double[days];
         int resultSize = 0;
-        for(int i = 1; i <= days; i++){
+        for(int i = 0; i < days; i++){
             HttpURLConnection connection = NBPDataLoader.connect(currencyCode,LocalDate.now().minusDays(i).toString());
             String answer = NBPDataLoader.read(connection);
             if(answer == null){
