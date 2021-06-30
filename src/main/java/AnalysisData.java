@@ -192,41 +192,30 @@ public class AnalysisData {
             values[5 + i] = (i*temp);
         }
 
-        for(int i = 0; i < diff.length; i++){
-            if(diff[i] <= values[0]){
+        for (double v : diff) {
+            if (v <= values[0]) {
                 counter[0]++;
-            }
-            else if(diff[i] < values[1]){
+            } else if (v < values[1]) {
                 counter[1]++;
-            }
-            else if(diff[i] < values[2]){
+            } else if (v < values[2]) {
                 counter[2]++;
-            }
-            else if(diff[i] < values[3]){
+            } else if (v < values[3]) {
                 counter[3]++;
-            }
-            else if(diff[i] < values[4]){
+            } else if (v < values[4]) {
                 counter[4]++;
-            }
-            else if(diff[i] < values[5]){
+            } else if (v < values[5]) {
                 counter[5]++;
-            }
-            else if(diff[i] < values[6]){
+            } else if (v < values[6]) {
                 counter[6]++;
-            }
-            else if(diff[i] < values[7]){
+            } else if (v < values[7]) {
                 counter[7]++;
-            }
-            else if(diff[i] < values[8]){
+            } else if (v < values[8]) {
                 counter[8]++;
-            }
-            else if(diff[i] < values[9]){
+            } else if (v < values[9]) {
                 counter[9]++;
-            }
-            else if(diff[i] < values[10]){
+            } else if (v < values[10]) {
                 counter[10]++;
-            }
-            else {
+            } else {
                 counter[11]++;
             }
         }
@@ -236,7 +225,9 @@ public class AnalysisData {
     }
 
 
-    public static void printDistributionChanges(int [] counter){
+    public static void printDistributionChanges(int [] counter) throws NullPointerException{
+        if (distributionChangesRanges == null)
+            throw new NullPointerException("Podano nieprawidłową walutę.");
         for (int i = 0; i <= distributionChangesRanges.length; i++){
             if (i==0){
                 System.out.print("<" + distributionChangesRanges[i] + ": ");
