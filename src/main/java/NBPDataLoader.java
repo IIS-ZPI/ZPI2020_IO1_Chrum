@@ -9,7 +9,6 @@ import java.nio.charset.StandardCharsets;
 
 public class NBPDataLoader {
 
-    private final String BaseURL = "http://api.nbp.pl/api/";
     private static final String CurrencyURL = "http://api.nbp.pl/api/exchangerates/rates/a/";
 
     public static HttpURLConnection connect(String UrlString) throws NullPointerException{
@@ -69,7 +68,7 @@ public class NBPDataLoader {
         if (connection == null){
             throw new NullPointerException("Parameter is of null value.");
         }
-        String result = null;
+        String result;
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
             result = br.readLine();

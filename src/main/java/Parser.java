@@ -20,11 +20,11 @@ public class Parser {
      *
      */
 
-    public static double [] getCurrency(String currencyCode, String periodTime) throws Exception{
+    public static double [] getCurrency(String currencyCode, String periodTime) throws NullPointerException{
         if (currencyCode == null || periodTime == null){
             throw new NullPointerException("At least one of parameters is null.");
         }
-        int days = 0;
+        int days;
         switch (periodTime) {
             case "day":
                 days = oneDay;
